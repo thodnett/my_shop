@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Login</h1>
-     <nav>
+<html>
+    <head>
+        <title>{% block page_title %} {% endblock %}</title>
+        
+    <body>
+        <h1>{% block page_heading %} {% endblock %}</h1>
+    <nav>
         <ul>
             <li><a href="{% url 'login' %}">Login</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -25,11 +22,7 @@
     
     </div>
     {% endif %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ login_form }}
-    <button type="submit">Login</button>
-    </form>
     
-</body>
+    </body>
+    </head>
 </html>
