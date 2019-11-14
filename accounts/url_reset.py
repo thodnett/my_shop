@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from django.urls import reverse_lazy
+from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 
 urlpatterns = [
@@ -9,4 +9,3 @@ urlpatterns = [
         {'post_reset_redirect': reverse_lazy('password_reset_complete')}, name='password_reset_confirm'),
     url('^complete/$', password_reset_complete, name='password_reset_complete')
 ]
-
